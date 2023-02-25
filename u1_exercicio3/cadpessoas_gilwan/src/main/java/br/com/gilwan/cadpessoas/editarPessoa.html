@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta codigoSecreto="475481518">
+
+    <title> Editar Dados Cadastrados </title>
+
+    <meta name="description" content="A starter example with all elements and components used in Pico design system. Built with Pico CSS.">
+
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="canonical" href="https://picocss.com/examples/preview/">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+
+    <div class="w3-bar w3-black w3-xlarge">
+
+        <a href="index.html" class="w3-bar-item w3-button w3-mobile "> Inicio </a>
+        <a href="adicionarPessoa.html" class="w3-bar-item w3-button w3-mobile"> Adicionar Pessoa </a>
+        <a href="listarPessoa.html" class="w3-bar-item w3-button w3-mobile"> Listar Pessoa </a>
+        <a href="contato.html" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
+        <a href="sobre.html" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre o Site </a> 
+        <a href="noticias.html" class="w3-bar-item w3-button w3-mobile w3-right"> Notícias </a>      
+
+    </div>
+		
+    <div style="padding:0 16px;">
+
+        <h1> Fomulário para editar pessoas: </h1>
+		
+        <form action ="listarPessoas.html">
+
+            <div class ="grid">
+
+                <label> Nome completo*: 
+                <input  type ="text" name ="nome" id ="nome" placeholder="Nome Completo" obrigatório>
+                </label>
+                
+                <label> e-mail*:
+                <input  type ="email " name ="mail " id ="mail " placeholder="nome@dominio.com " obrigatório> 
+                </label>
+                
+                <label> Data de nascimento*: 
+                <input type ="date" nome ="date" id ="date" placeholder="dd/mm/aaaa" obrigatório>
+                </label>
+               
+            </div>
+
+            <p> Informe o sexo*:</p>
+            <p><input type="radio" name="pessoa">Masculino</p>
+            <p><input type="radio" name="pessoa">Feminino</p>
+            <p><input type="radio" name="pessoa">Não Informar</p>
+        
+            </div>
+
+            <div class ="grid">
+
+                <input  type ="submit" value="Cadastrar!">
+                <input  type ="reset" value="Limpar" >
+
+            </div>
+
+            <p> *Campo Obrigatório </p>
+			
+		</form>
+
+    </div>
+
+</body>
+
+</html>
