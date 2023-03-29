@@ -19,12 +19,12 @@
 
     <div class="w3-bar w3-black w3-xlarge">
 
-        <a href="index.html" class="w3-bar-item w3-button w3-mobile "> Inicio </a>
-        <a href="adicionarPessoa.html" class="w3-bar-item w3-button w3-mobile"> Adicionar Pessoa </a>
-        <a href="listarPessoa.html" class="w3-blue w3-bar-item w3-button w3-mobile"> Listar Pessoa </a>
-        <a href="contato.html" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
-        <a href="sobre.html" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre o Site </a> 
-        <a href="noticias.html" class="w3-bar-item w3-button w3-mobile w3-right"> Notícias </a>      
+        <a href="/" class="w3-blue w3-bar-item w3-button w3-mobile "> Inicio </a>
+        <a href="/clientes/adicionar" class="w3-bar-item w3-button w3-mobile"> Adicionar Pessoa </a>
+        <a href="/listar" class="w3-bar-item w3-button w3-mobile"> Listar Pessoa </a>
+        <a th:href="@{/public/contato.html}" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
+        <a th:href="@{/public/sobre.html}" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre o Site </a> 
+        <a th:href="@{/public/noticias.html}" class="w3-bar-item w3-button w3-mobile w3-right"> Notícias </a>      
 
     </div>
 

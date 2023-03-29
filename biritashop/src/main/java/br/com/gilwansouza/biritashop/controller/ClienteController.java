@@ -24,17 +24,17 @@ public class ClienteController {
         this.clienteRepo = clienteRepo;
     }
 
-    @GetMapping("/clientes")
+    @GetMapping("/listar")
     public ModelAndView index() {
         List<Cliente> lista = clienteRepo.findAll();
-        ModelAndView mav = new ModelAndView("clientes/index");
+        ModelAndView mav = new ModelAndView("listarPessoas");
         mav.addObject("clientes", lista);
         return mav;
     }
 
     @GetMapping("/clientes/adicionar")
     public ModelAndView formCadastro() {
-        ModelAndView mav = new ModelAndView("clientes/adicionar");
+        ModelAndView mav = new ModelAndView("adicionarPessoa");
         mav.addObject(new Cliente());
         return mav;
     }
