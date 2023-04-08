@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A starter example with all elements and components used in Pico design system. Built with Pico CSS.">
+  <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>BiritaShop</title>
+</head>
+
+<body>
+  <div class="w3-bar w3-black w3-mobile w3-xlarge">
+      <a href="/" class="w3-bar-item w3-button w3-mobile">Home</a>
+      <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right">Sobre</a>
+      <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
+      
+      <div class="w3-dropdown-hover w3-mobile">
+        <button class="w3-button w3-bar-block w3-mobile">Cliente</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="/cliente/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Cliente</a>
+          <a href="/cliente/listar" class="w3-bar-item w3-button w3-mobile">Lista de Clientes</a>
+        </div>
+      </div>
+  
+      <div class="w3-dropdown-hover w3-mobile">
+        <button class="w3-button w3-bar-block w3-mobile">Dependente</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="/dependente/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Dependente</a>
+          <a href="/dependente/listar" class="w3-bar-item w3-button w3-mobile">Lista de Dependentes</a>
+        </div>
+      </div>
+  
+      <div class="w3-dropdown-hover w3-mobile">
+        <button class="w3-orange w3-button w3-bar-block w3-mobile">Produto</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="/produto/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Produto</a>
+          <a href="/produto/listar" class="w3-bar-item w3-button w3-mobile">Lista de Produtos</a>
+        </div>
+      </div>
+
+      <div class="w3-dropdown-hover w3-mobile">
+        <button class="w3-button w3-bar-block w3-mobile">Pedido</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="/pedido/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Pedido</a>
+          <a href="/pedido/listar" class="w3-bar-item w3-button w3-mobile">Lista de Pedidos</a>
+        </div>
+      </div>
+    </div>
+
+  <div style="padding:0 16px;">
+    <h1>Lista dos Produtos Cadastrados</h1>
+    <div class="grid">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Volume</th>
+          <th scope="col">Tipo Embalagem</th>
+          <th scope="col">Preço de Compra</th>
+          <th scope="col">Preço de Venda</th>
+          <th scope="col">Data Cadastro</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Remover</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="produto: ${produtos}">
+          <th scope="row" th:text="${produto.id}"></th>
+          <td th:text="${produto.nome}"></td>
+          <td th:text="${produto.marca}"></td>
+          <td th:text="${produto.volume} + 'mL'"></td>
+          <td th:text="${produto.tipoEmbalagem}"></td>
+          <td th:text="${produto.precoCompra} + 'R$'"></td>
+          <td th:text="${produto.precoVenda} + 'R$'"></td>
+          <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
+          <td> <font color="blue"> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a></td>
+          <td> <font color="blue"> <a th:href="@{remover/{id}(id=${produto.id})}">Remover</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
