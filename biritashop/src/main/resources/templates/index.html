@@ -12,22 +12,60 @@
 	<link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
 	<link th:href="@{/assets/w3.css}" rel="stylesheet" />
 	<link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
 <body>
-    
-    <div class="w3-bar w3-black w3-xlarge">
 
-        <a href="/" class="w3-orange w3-bar-item w3-button w3-mobile "> Inicio </a>
-        <a href="/cliente/adicionaCliente" class="w3-bar-item w3-button w3-mobile"> Adicionar Cliente </a>
-        <a href="/listar" class="w3-bar-item w3-button w3-mobile"> Listar Cliente </a>
-        <a th:href="@{/public/contato.html}" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
-        <a th:href="@{/public/sobre.html}" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre o Site </a> 
+    <div class="w3-bar w3-black w3-xlarge ">
+
+        <img  src ="assets/favicon.ico" height="50" width="50" class="w3-item w3-left" >
+
+        <div class="w3-dropdown-hover w3-purple">
+            <button class="w3-button">≡</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-bar-item-block">
+
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cliente
+                    </button>
+                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                    
+                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/adicionaCliente">Adicionar</a>
+                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/listarCliente">Listar</a>
+                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/editarCliente">Editar</a>
+                    </div>
+                </div>
+
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Produto
+                    </button>
+                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                      
+                      <a class="dropdown-item w3-bar-block" href="/public/cliente">Adicionar</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Pedido
+                    </button>
+                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                      
+                      <a class="dropdown-item w3-bar-block" href="/public/cliente">Adicionar</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> Inicio </a>
+
+        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
+        <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
 
     </div>
-    
-    <div>
 		
         <center>
             

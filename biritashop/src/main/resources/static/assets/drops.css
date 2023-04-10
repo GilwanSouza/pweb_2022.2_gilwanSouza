@@ -1,0 +1,23 @@
+/* _button-group.scss:81 */
+.dropright &::after {
+    margin-left: 0;
+}
+
+/* _dropdown.scss:56 */
+.dropright {
+    .dropdown-menu {
+        top: 0;
+        right: auto;
+        left: 100%;
+        margin-top: 0;
+        margin-left: $dropdown-spacer;
+    }
+
+    .dropdown-toggle {
+        @include caret(right);
+
+        &::after {
+            vertical-align: 0;
+        }
+    }
+}
