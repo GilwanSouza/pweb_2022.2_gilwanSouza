@@ -18,14 +18,13 @@ import br.com.gilwansouza.biritashop.repository.ProdutoRepository;
 public class ProdutoController {
 
     @Autowired
-
     ProdutoRepository produtoRepo;
 
     @GetMapping("/listarProduto")
     public ModelAndView index() {
         List<Produto> lista = produtoRepo.findAll();
         ModelAndView mav = new ModelAndView("/produto/listarProduto");
-        mav.addObject("produto", lista);
+        mav.addObject("produtos", lista);
         return mav;
     }
 
@@ -39,7 +38,7 @@ public class ProdutoController {
     @PostMapping("/adicionarProduto")
     public String adicionar(Produto p) {
         this.produtoRepo.save(p);
-        return "redirect:/produto";
+        return "redirect:/produto/listarProduto";
     }
 
     @GetMapping("/editarProduto/{id}")
@@ -55,7 +54,7 @@ public class ProdutoController {
     @PostMapping("/editarProduto/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Produto produto) {
         this.produtoRepo.save(produto);
-        return new ModelAndView("redirect:/produto");
+        return new ModelAndView("redirect:/produto/editarProduto");
     }
 
     @GetMapping("/remover/{id}")
@@ -63,7 +62,6 @@ public class ProdutoController {
         Produto aRemover = this.produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.produtoRepo.delete(aRemover);
-        return new ModelAndView("redirect:/produto");
+        return new ModelAndView("redirect:/produto/editarProduto");
     }
-
 }

@@ -54,19 +54,19 @@
     </div>
 
     <div class="grid">
-        <div style="padding:0 16px;">
-            <form th:action="@{/cliente/adicionar}" method="POST" th:object="${cliente}">
+        <div style="padding:0 160px;">
+            <form th:action="@{/cliente/adicionaCliente}" method="POST" th:object="${cliente}">
                 <h1>Adicionar cliente</h1>
                 <div class="grid">
                     <div>
-                        <label for="nomeCompleto">Nome Completo*</label>
+                        <label for="nomeCompleto">Nome completo*</label>
                         <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
-                            placeholder="Nome Completo" th:field="*{nomeCompleto}" required>
+                            placeholder="Nome completo" th:field="*{nomeCompleto}" required>
                     </div>
 
                     <div>
                         <label for="telefone">Telefone*</label>
-                        <input type="tel" class="form-control" id="telefone" name="telefone"
+                        <input type="text" class="form-control" id="telefone" name="telefone"
                             placeholder="(__) ____-____" th:field="*{telefone}" required>
                     </div>
 
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="row">
-                    <legend class="col-form-label pt-0">Informe o Gênero*</legend>
+                    <legend class="col-form-label pt-0">Informe o gênero*</legend>
                     <div class="col-sm-10">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino"
@@ -109,7 +109,7 @@
                             <input class="form-check-input" type="radio" name="genero" id="naoInformado"
                                 value="Não Informado" th:field="*{genero}">
                             <label class="form-check-label" for="naoInformado">
-                                Não Informado
+                                Não informado
                             </label>
                         </div>
                     </div>
@@ -117,11 +117,11 @@
 
                 <br>
 
-                <button class="btn btn-primary" type="submit">Adicionar</button>
+                <button class="btn btn-primary contrast" type="submit">Adicionar</button>
                 <br>
-                <button class="btn btn-secondary" type="reset">Limpar Campos</button>
+                <button class="btn btn-secondary secondary" type="reset">Limpar campos</button>
 
-                <p>*Campo Obrigatório</p>
+                <p>* Todos os campo são obrigatório</p>
             </form>
 
         </div>

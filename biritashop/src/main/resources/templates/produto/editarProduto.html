@@ -55,50 +55,44 @@
 
     <div class="grid">
         <div style="padding:0 160px;">
-            <form action="@{/produto/adicionar}" method="post" th:object="${produto}">
-                <h1>Adicionar produto</h1>
+            <form th:action="@{/produto/editarProduto}" method="post" th:object="${produto}">
+                <h1>Editar produto</h1>
 
-                <fieldset class="grid">
-                    <legend>Nome * </legend>
-                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome"
-                        field="*{nomeDoProduto}" required>
-                    <label for="nomeDoProduto"></label>
-                </fieldset>
+                <div class="grid">
+                    <label for="nomeDoProduto">Nome *
+                        <input type="text" name="nomeDoProduto" class="form-control" id="nomeDoProduto"
+                            placeholder="Nome do produto" field="*{nomeDoProduto}" required>
+                    </label>
 
-                <fieldset class="grid">
-                    <legend>Marca * </legend>
-                    <input type="text" name="marca" class="form-control" id="marca" placeholder="Marca"
-                        field="*{marcaDoProduto}" required>
-                    <label for="marcaDoProduto"></label>
-                </fieldset>
+                    <label for="marcaDoProduto">Marca *
+                        <input type="text" name="marcaDoProduto" class="form-control" id="marcaDoProduto"
+                            placeholder="Marca do produto" field="*{marcaDoProduto}" required>
+                    </label>
+                </div>
 
-                <fieldset class="grid">
-                    <legend>Volume * </legend>
-                    <input type="text" name="volume" class="form-control" id="volume" placeholder="Volume"
-                        field="*{volume}" required>
-                    <label for="volume"></label>
-                </fieldset>
+                <div class="grid">
+                    <label for="volume">Volume *
+                        <input type="text" name="volume" class="form-control" id="volume" placeholder="Volume"
+                            field="*{volume}" required>
+                    </label>
 
-                <fieldset class="grid">
-                    <legend>Preço de compra * </legend>
-                    <input type="text" name="precoCompra" class="form-control" id="precoCompra"
-                        placeholder="Preço de Compra" field="*{precoCompra}" required>
-                    <label for="precoCompra"></label>
-                </fieldset>
+                    <label for="precoCompra">Preço de compra *
+                        <input type="text" name="precoCompra" class="form-control" id="precoCompra"
+                            placeholder="Preço de Compra" field="*{precoCompra}" required>
+                    </label>
+                </div>
 
-                <fieldset class="grid">
-                    <legend>Preço de venda * </legend>
-                    <input type="text" name="precoVenda" class="form-control" id="precoVenda"
-                        placeholder="Preço de venda" field="*{precoVenda}" required>
-                    <label for="precoVenda"></label>
-                </fieldset>
+                <div class="grid">
+                    <label for="precoVenda">Preço de venda *
+                        <input type="text" name="precoVenda" class="form-control" id="precoVenda"
+                            placeholder="Preço de venda" field="*{precoVenda}" required>
+                    </label>
 
-                <fieldset class="grid">
-                    <legend>Data de cadastro * </legend>
-                    <input type="text" name="dataCadastro" class="form-control" id="dataCadastro"
-                        placeholder="Data de cadastro" field="*{dataCadastro}" required>
-                    <label for="dataCadastro"></label>
-                </fieldset>
+                    <label for="dataCadastro">Data de cadastro *
+                        <input type="date" name="dataCadastro" class="form-control" id="dataCadastro"
+                            placeholder="Data de cadastro" field="*{dataCadastro}" required>
+                    </label>
+                </div>
 
                 <div class="row">
                     <legend class="col-form-label pt-0">Tipo de Embalagem * </legend>
@@ -131,14 +125,13 @@
 
                 <br>
 
-                <button class="btn btn-primary" type="submit">Adicionar</button>
+                <button class="btn btn-primary contrast" type="submit">Adicionar</button>
                 <br>
-                <button class="btn btn-secondary" type="reset">Limpar Campos</button>
+                <button class="btn btn-secondary secondary" type="reset">Limpar Campos</button>
 
                 <p>* Todos os campos são obrigatórios</p>
             </form>
         </div>
     </div>
 </body>
-
 </html>

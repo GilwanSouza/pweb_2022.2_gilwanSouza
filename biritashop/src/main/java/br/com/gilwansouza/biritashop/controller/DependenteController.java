@@ -18,7 +18,6 @@ import br.com.gilwansouza.biritashop.repository.DependenteRepository;
 public class DependenteController {
 
     @Autowired
-
     DependenteRepository dependenteRepo;
 
     @GetMapping("/listarDependente")

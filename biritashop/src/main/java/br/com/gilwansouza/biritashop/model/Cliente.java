@@ -18,12 +18,10 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "cliente")
-
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String nomeCompleto;
     private String genero;
@@ -32,6 +30,5 @@ public class Cliente {
     private String CEP;
 
     @OneToMany(mappedBy = "cliente")
-
     private List<Dependente> dependentes;
 }

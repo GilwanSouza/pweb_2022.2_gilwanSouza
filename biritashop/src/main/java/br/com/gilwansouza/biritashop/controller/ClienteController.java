@@ -18,14 +18,13 @@ import br.com.gilwansouza.biritashop.repository.ClienteRepository;
 public class ClienteController {
 
     @Autowired
-
     ClienteRepository clienteRepo;
 
     @GetMapping("/listarCliente")
     public ModelAndView index() {
         List<Cliente> lista = clienteRepo.findAll();
-        ModelAndView mav = new ModelAndView("cliente/listarCliente");
-        mav.addObject("cliente", lista);
+        ModelAndView mav = new ModelAndView("/cliente/listarCliente");
+        mav.addObject("clientes", lista);
         return mav;
     }
 
@@ -39,7 +38,7 @@ public class ClienteController {
     @PostMapping("/adicionaCliente")
     public String adicionar(Cliente p) {
         this.clienteRepo.save(p);
-        return "redirect:/cliente";
+        return "redirect:/cliente/listarCliente";
     }
 
     @GetMapping("/editarCliente/{id}")

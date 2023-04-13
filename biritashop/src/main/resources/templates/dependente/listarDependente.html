@@ -69,13 +69,14 @@
 
         <tbody>
           <tr th:each="dependente: ${dependente}">
-            <th scope="row" th:text="${cliente.id}"></th>
-            <td th:text="${dependente.nome}"></td>
+            <td th:text="${dependente.nomeCompleto}"></td>
+            <td th:text="${dependente.dtNascimento}"></td>
+            <td th:text="${dependente.genero}"></td>
             <td>
-              <font color="blue"> <a th:href="@{editar/{id}(id=${dependente.id})}">Editar</a>
+              <a th:href="@{editar/{id}(id=${dependente.id})}">Editar</a>
             </td>
             <td>
-              <font color="blue"> <a th:href="@{remover/{id}(id=${dependente.id})}">Remover</a>
+              <a th:href="@{remover/{id}(id=${dependente.id})}">Remover</a>
             </td>
           </tr>
         </tbody>

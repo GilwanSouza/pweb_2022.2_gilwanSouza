@@ -4,19 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,24 +25,15 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-    private String nomeDoproduto;
+    private String nomeDoProduto;
     private String marcaDoProduto;
     private String volume;
     private String precoCompra;
     private String precoVenda;
-    private boolean tipoEmbalagem;
+    private String tipoEmbalagem;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataCadastro;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cliente_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-
-    private Cliente cliente;
 }

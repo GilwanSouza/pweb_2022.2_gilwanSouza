@@ -38,7 +38,7 @@ public class Dependente {
     private String genero;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 
     private LocalDate dtNascimento;
 

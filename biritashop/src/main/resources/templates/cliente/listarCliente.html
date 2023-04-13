@@ -71,11 +71,16 @@
 
                 <tbody>
                     <tr th:each="cliente: ${clientes}">
+                        <td th:text="${cliente.nomeCompleto}"></td>
+                        <td th:text="${cliente.telefone}"></td>
+                        <td th:text="${cliente.cidade}"></td>
+                        <td th:text="${cliente.CEP}"></td>
+                        <td th:text="${cliente.genero}"></td>
                         <td>
-                            <font color="blue"> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a>
+                            <a th:href="@{editar/{id}(id=${cliente.id})}">Editar</a>
                         </td>
                         <td>
-                            <font color="blue"> <a th:href="@{remover/{id}(id=${produto.id})}">Remover</a>
+                            <a th:href="@{remover/{id}(id=${cliente.id})}">Remover</a>
                         </td>
                     </tr>
                 </tbody>
