@@ -18,55 +18,51 @@ import br.com.gilwansouza.biritashop.repository.ClienteRepository;
 public class ClienteController {
 
     @Autowired
+
     ClienteRepository clienteRepo;
 
-    public ClienteController(ClienteRepository clienteRepo) {
-        this.clienteRepo = clienteRepo;
-    }
-
-    @GetMapping("/cliente/listarCliente")
+    @GetMapping("/listarCliente")
     public ModelAndView index() {
         List<Cliente> lista = clienteRepo.findAll();
-        ModelAndView mav = new ModelAndView("listarCliente");
-        mav.addObject("clientes", lista);
+        ModelAndView mav = new ModelAndView("cliente/listarCliente");
+        mav.addObject("cliente", lista);
         return mav;
     }
 
-    @GetMapping("/cliente/adicionaCliente")
+    @GetMapping("/adicionaCliente")
     public ModelAndView formCadastro() {
-        ModelAndView mav = new ModelAndView("adicionaCliente");
+        ModelAndView mav = new ModelAndView("/cliente/adicionaCliente");
         mav.addObject(new Cliente());
         return mav;
     }
 
-    @PostMapping("/cliente/adicionaCliente")
+    @PostMapping("/adicionaCliente")
     public String adicionar(Cliente p) {
         this.clienteRepo.save(p);
         return "redirect:/cliente";
     }
 
-    @GetMapping("/clientes/editar/{id}")
+    @GetMapping("/editarCliente/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Cliente cliente = this.clienteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
-
-        ModelAndView modelAndView = new ModelAndView("clientes/editar");
+        ModelAndView modelAndView = new ModelAndView("/cliente/editarCliente");
         modelAndView.addObject(cliente);
         return modelAndView;
     }
 
-    @PostMapping("/clientes/editar/{id}")
+    @PostMapping("/editarCliente/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Cliente cliente) {
         this.clienteRepo.save(cliente);
         return new ModelAndView("redirect:/clientes");
     }
 
-    @GetMapping("/clientes/remover/{id}")
+    @GetMapping("/remover/{id}")
     public ModelAndView remover(@PathVariable long id) {
         Cliente aRemover = this.clienteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.clienteRepo.delete(aRemover);
-        return new ModelAndView("redirect:/clientes");
+        return new ModelAndView("redirect:/cliente");
     }
 
 }

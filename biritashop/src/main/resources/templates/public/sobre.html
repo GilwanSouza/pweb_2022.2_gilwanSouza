@@ -6,41 +6,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta codigoSecreto="475481518">
-
-    <title> Sobre este site! </title>
-    
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="/assets/w3.css" />
-    <link rel="stylesheet" href="/assets/pico.min.css" />
+  
+    <title> Birita Shop </title>
+  
+    <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+    <link th:href="@{/assets/w3.css}" rel="stylesheet" />
+    <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+  
 </head>
 
 <body>
 
-    <div class="w3-bar w3-black w3-xlarge ">
+    <div class="w3-bar w3-black w3-xlarge">
+        <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
+        <div class="dropdown">
+            <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
+            <div class="dropdown-content w3-padding-top-48 w3-transparent">
+                <div class="row">
 
-        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> Inicio </a>
+                    <div class="column w3-purple">
+                        <h3>Cliente</h3>
+                        <a href="/cliente/adicionaCliente">Adicionar</a>
+                        <a href="/cliente/listarCliente">Listar</a>
+                    </div>
 
-        <div class="w3-dropdown-hover">
-            <button class="w3-button">Cliente</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-bar-item-block">
-              <a href="/cliente/adicionaCliente" class="w3-bar-item w3-button">Adicionar</a>
-              <a href="/cliente/listarCliente" class="w3-bar-item w3-button">Listar</a>
-              <a href="/cliente/editarCliente" class="w3-bar-item w3-button">Editar</a>
+                    <div class="column w3-purple">
+                        <h3>Produto</h3>
+                        <a href="/produto/adicionarProduto">Adicionar</a>
+                        <a href="/produto/listarProduto">Listar</a>
+                    </div>
+
+                    <div class="column w3-purple">
+                        <h3>Dependente</h3>
+                        <a href="/dependente/adicionarDependente">Adicionar</a>
+                        <a href="/dependente/listarDependente">Listar</a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="w3-dropdown-hover">
-            <button class="w3-button">Produto</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-bar-item-block">
-              <a href="/cliente/adicionaCliente" class="w3-bar-item w3-button">Adicionar</a>
-              <a href="/cliente/listarCliente" class="w3-bar-item w3-button">Listar</a>
-              <a href="/cliente/editarCliente" class="w3-bar-item w3-button">Editar</a>
-            </div>
-        </div>
-
-        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
+        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
+        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
         <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
 
     </div>

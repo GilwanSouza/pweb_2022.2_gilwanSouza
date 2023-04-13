@@ -1,120 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="light">
+<html lang="pt-br" data-theme="dark">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A starter example with all elements and components used in Pico design system. Built with Pico CSS.">
-    <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <meta codigoSecreto="475481518">
+
+    <title> Birita Shop </title>
+
+    <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+    <link th:href="@{/assets/w3.css}" rel="stylesheet" />
+    <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>BiritaShop</title>
+
 </head>
 
 <body>
-    <div class="w3-bar w3-black w3-mobile w3-xlarge">
-        <a href="/" class="w3-bar-item w3-button w3-mobile">Home</a>
-        <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right">Sobre</a>
-        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right">Contato</a>
-        
-        <div class="w3-dropdown-hover w3-mobile">
-          <button class="w3-purple w3-button w3-bar-block w3-mobile">Cliente</button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="/cliente/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Cliente</a>
-            <a href="/cliente/listar" class="w3-bar-item w3-button w3-mobile">Lista de Clientes</a>
-          </div>
-        </div>
-    
-        <div class="w3-dropdown-hover w3-mobile">
-          <button class="w3-button w3-bar-block w3-mobile">Dependente</button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="/dependente/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Dependente</a>
-            <a href="/dependente/listar" class="w3-bar-item w3-button w3-mobile">Lista de Dependentes</a>
-          </div>
-        </div>
-    
-        <div class="w3-dropdown-hover w3-mobile">
-          <button class="w3-button w3-bar-block w3-mobile">Produto</button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="/produto/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Produto</a>
-            <a href="/produto/listar" class="w3-bar-item w3-button w3-mobile">Lista de Produtos</a>
-          </div>
-        </div>
 
-        <div class="w3-dropdown-hover w3-mobile">
-            <button class="w3-button w3-bar-block w3-mobile">Pedido</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="/pedido/adicionar" class="w3-bar-item w3-button w3-mobile">Adicionar Pedido</a>
-              <a href="/pedido/listar" class="w3-bar-item w3-button w3-mobile">Lista de Pedidos</a>
+    <div class="w3-bar w3-black w3-xlarge">
+        <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
+        <div class="dropdown">
+            <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
+            <div class="dropdown-content w3-padding-top-48 w3-transparent">
+                <div class="row">
+
+                    <div class="column w3-purple">
+                        <h3>Cliente</h3>
+                        <a href="/cliente/adicionaCliente">Adicionar</a>
+                        <a href="/cliente/listarCliente">Listar</a>
+                    </div>
+
+                    <div class="column w3-purple">
+                        <h3>Produto</h3>
+                        <a href="/produto/adicionarProduto">Adicionar</a>
+                        <a href="/produto/listarProduto">Listar</a>
+                    </div>
+
+                    <div class="column w3-purple">
+                        <h3>Dependente</h3>
+                        <a href="/dependente/adicionarDependente">Adicionar</a>
+                        <a href="/dependente/listarDependente">Listar</a>
+                    </div>
+
+                </div>
             </div>
         </div>
-      </div>
+
+        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
+        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
+        <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
+
+    </div>
 
     <div class="grid">
-        <div style="padding:0 16px;">
-        <form th:action="@{/cliente/editar/{id}(id=${cliente.id})}" method="POST" th:object="${cliente}">
-            <h1>Editar as Informações do Cliente</h1>
-            <div class="grid">
-                <div>
-                    <label for="nomeCompleto">Nome Completo*</label>
-                    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Nome Completo" th:field="*{nomeCompleto}" required>
-                </div>
+        <div style="padding:0 160px;">
+            <form action="@{/produto/adicionar}" method="post" th:object="${produto}">
+                <h1>Adicionar produto</h1>
 
-                <div>
-                    <label for="telefone">Telefone*</label>
-                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(__) ____-____" th:field="*{telefone}" required>
-                </div>
+                <fieldset class="grid">
+                    <legend>Nome * </legend>
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome"
+                        field="*{nomeDoProduto}" required>
+                    <label for="nomeDoProduto"></label>
+                </fieldset>
 
-            </div>
+                <fieldset class="grid">
+                    <legend>Marca * </legend>
+                    <input type="text" name="marca" class="form-control" id="marca" placeholder="Marca"
+                        field="*{marcaDoProduto}" required>
+                    <label for="marcaDoProduto"></label>
+                </fieldset>
 
-            <div class="grid">
-                <div>
-                    <label for="cidade">Cidade*</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" th:field="*{cidade}" required>
-                </div>
+                <fieldset class="grid">
+                    <legend>Volume * </legend>
+                    <input type="text" name="volume" class="form-control" id="volume" placeholder="Volume"
+                        field="*{volume}" required>
+                    <label for="volume"></label>
+                </fieldset>
 
-                <div>
-                    <label for="cep">CEP*</label>
-                    <input type="text" class="form-control" id="cep" name="CEP" placeholder="_____-___" th:field="*{CEP}" required>
-                </div>
-            </div>
+                <fieldset class="grid">
+                    <legend>Preço de compra * </legend>
+                    <input type="text" name="precoCompra" class="form-control" id="precoCompra"
+                        placeholder="Preço de Compra" field="*{precoCompra}" required>
+                    <label for="precoCompra"></label>
+                </fieldset>
 
-            <div class="row">
-                <legend class="col-form-label pt-0">Informe o Gênero*</legend>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino" th:field="*{genero}">
-                        <label class="form-check-label" for="masculino">
-                            Masculino
-                        </label>
+                <fieldset class="grid">
+                    <legend>Preço de venda * </legend>
+                    <input type="text" name="precoVenda" class="form-control" id="precoVenda"
+                        placeholder="Preço de venda" field="*{precoVenda}" required>
+                    <label for="precoVenda"></label>
+                </fieldset>
+
+                <fieldset class="grid">
+                    <legend>Data de cadastro * </legend>
+                    <input type="text" name="dataCadastro" class="form-control" id="dataCadastro"
+                        placeholder="Data de cadastro" field="*{dataCadastro}" required>
+                    <label for="dataCadastro"></label>
+                </fieldset>
+
+                <div class="row">
+                    <legend class="col-form-label pt-0">Tipo de Embalagem * </legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoEmbalagem" id="platico"
+                                value="Plástico" field="*{tipoEmbalagem}">
+                            <label class="form-check-label" for="platico">
+                                Plástico
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoEmbalagem" id="metal" value="Metal"
+                                field="*{tipoEmbalagem}">
+                            <label class="form-check-label" for="metal">
+                                Metal
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoEmbalagem" id="vidro" value="Vidro"
+                                field="*{tipoEmbalagem}">
+                            <label class="form-check-label" for="vidro">
+                                Vidro
+                            </label>
+                        </div>
                     </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="genero" id="feminino" value="Feminino" th:field="*{genero}">
-                        <label class="form-check-label" for="feminino">
-                            Feminino
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="genero" id="naoInformado" value="Não Informado" th:field="*{genero}">
-                        <label class="form-check-label" for="naoInformado">
-                            Não Informado
-                        </label>
-                    </div>
                 </div>
-            </div>
 
-            <br>
+                <br>
 
-            <button class="btn btn-primary" type="submit">Salvar Alterações</button>
-            <br>
-            <button class="btn btn-secondary" type="reset">Limpar Campos</button>
+                <button class="btn btn-primary" type="submit">Adicionar</button>
+                <br>
+                <button class="btn btn-secondary" type="reset">Limpar Campos</button>
 
-            <p>*Campo Obrigatório</p>
-        </form>
+                <p>* Todos os campos são obrigatórios</p>
+            </form>
+        </div>
     </div>
+
 </body>
 
 </html>

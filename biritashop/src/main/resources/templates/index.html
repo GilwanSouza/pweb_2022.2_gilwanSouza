@@ -3,80 +3,66 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta codigoSecreto="475481518">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta codigoSecreto="475481518">
 
-    <title> Birita Shop </title>
+  <title> Birita Shop </title>
 
-	<link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
-	<link th:href="@{/assets/w3.css}" rel="stylesheet" />
-	<link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+  <link th:href="@{/assets/w3.css}" rel="stylesheet" />
+  <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
 <body>
 
-    <div class="w3-bar w3-black w3-xlarge ">
+  <div class="w3-bar w3-black w3-xlarge">
+    <img src="assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
+    <div class="dropdown">
+      <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
+      <div class="dropdown-content w3-padding-top-48 w3-transparent">
+        <div class="row">
 
-        <img  src ="assets/favicon.ico" height="50" width="50" class="w3-item w3-left" >
+          <div class="column w3-purple">
+            <h3>Cliente</h3>
+            <a href="/cliente/adicionaCliente">Adicionar</a>
+            <a href="/cliente/listarCliente">Listar</a>
+          </div>
 
-        <div class="w3-dropdown-hover w3-purple">
-            <button class="w3-button">≡</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-bar-item-block">
+          <div class="column w3-purple">
+            <h3>Produto</h3>
+            <a href="/produto/adicionarProduto">Adicionar</a>
+            <a href="/produto/listarProduto">Listar</a>
+          </div>
 
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Cliente
-                    </button>
-                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                    
-                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/adicionaCliente">Adicionar</a>
-                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/listarCliente">Listar</a>
-                      <a type="button" class="dropdown-item w3-bar-block" href="/cliente/editarCliente">Editar</a>
-                    </div>
-                </div>
+          <div class="column w3-purple">
+            <h3>Dependente</h3>
+            <a href="/dependente/adicionarDependente">Adicionar</a>
+            <a href="/dependente/listarDependente">Listar</a>
+          </div>
 
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Produto
-                    </button>
-                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                      
-                      <a class="dropdown-item w3-bar-block" href="/public/cliente">Adicionar</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </div>
-                </div>
-
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Pedido
-                    </button>
-                    <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(111px, 0px, 0px); top: 0px; left: 0px; will-change: transform;">                      
-                      <a class="dropdown-item w3-bar-block" href="/public/cliente">Adicionar</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </div>
-                </div>
-
-            </div>
         </div>
-
-        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> Inicio </a>
-
-        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a> 
-        <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
-
+      </div>
     </div>
-		
-        <center>
-            
-            <h5>
 
-            </h5>
-            <img  src ="assets/beer.jpeg" alt ="beer" title ="Beer">
+    <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
+    <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
+    <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
+    
+  </div>
 
-        </center>
+  <center>
 
-    </div>
+    <h5>
+
+    </h5>
+    <img src="assets/beer.jpeg" alt="beer" title="Beer">
+
+  </center>
+
+
 
 </body>
 

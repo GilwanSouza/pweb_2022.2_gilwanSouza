@@ -14,63 +14,56 @@ import br.com.gilwansouza.biritashop.model.Produto;
 import br.com.gilwansouza.biritashop.repository.ProdutoRepository;
 
 @Controller
-@RequestMapping
-
+@RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
 
     ProdutoRepository produtoRepo;
 
-    @GetMapping("/produtos")
-
+    @GetMapping("/listarProduto")
     public ModelAndView index() {
         List<Produto> lista = produtoRepo.findAll();
-        ModelAndView mav = new ModelAndView("produtos/index");
-        mav.addObject("produtos", lista);
+        ModelAndView mav = new ModelAndView("/produto/listarProduto");
+        mav.addObject("produto", lista);
         return mav;
     }
 
-    @GetMapping("/produtos/adicionar")
-
+    @GetMapping("/adicionarProduto")
     public ModelAndView formCadastro() {
-        ModelAndView mav = new ModelAndView("produtos/adicionar");
+        ModelAndView mav = new ModelAndView("/produto/adicionarProduto");
         mav.addObject(new Produto());
         return mav;
     }
 
-    @PostMapping("/produtos/adicionar")
-
+    @PostMapping("/adicionarProduto")
     public String adicionar(Produto p) {
         this.produtoRepo.save(p);
-        return "redirect:/produtos";
+        return "redirect:/produto";
     }
 
-    @GetMapping("/produtos/editar/{id}")
-
+    @GetMapping("/editarProduto/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Produto produto = this.produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 
-        ModelAndView modelAndView = new ModelAndView("produtos/editar");
+        ModelAndView modelAndView = new ModelAndView("/produto/editarProduto");
         modelAndView.addObject(produto);
         return modelAndView;
     }
 
-    @PostMapping("/produtos/editar/{id}")
-
+    @PostMapping("/editarProduto/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Produto produto) {
         this.produtoRepo.save(produto);
-        return new ModelAndView("redirect:/produtos");
+        return new ModelAndView("redirect:/produto");
     }
 
-    @GetMapping("/produtos/remover/{id}")
-
+    @GetMapping("/remover/{id}")
     public ModelAndView remover(@PathVariable long id) {
         Produto aRemover = this.produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.produtoRepo.delete(aRemover);
-        return new ModelAndView("redirect:/produtos");
+        return new ModelAndView("redirect:/produto");
     }
 
 }
