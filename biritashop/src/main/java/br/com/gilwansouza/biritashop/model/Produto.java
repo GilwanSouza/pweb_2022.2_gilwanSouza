@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "dependente")
+@Table(name = "produto")
 
 public class Produto {
 
@@ -34,13 +34,17 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String nomeCompleto;
-    private String genero;
+    private String nomeDoproduto;
+    private String marcaDoProduto;
+    private String volume;
+    private String precoCompra;
+    private String precoVenda;
+    private boolean tipoEmbalagem;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
 
-    private LocalDate dataNascimento;
+    private LocalDate dataCadastro;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", nullable = false)

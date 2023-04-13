@@ -71,9 +71,6 @@
 
                 <tbody>
                     <tr th:each="cliente: ${clientes}">
-                        <th scope="row" th:text="${produto.id}"></th>
-                        <td th:text="${cliente.nome}"></td>
-                        <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
                         <td>
                             <font color="blue"> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a>
                         </td>

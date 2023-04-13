@@ -55,7 +55,7 @@
 
     <div class="grid">
         <div style="padding:0 160px;">
-            <form action="@{/produto/adicionar}" method="post" th:object="${produto}">
+            <form th:action="@{/produto/adicionar}" method="post" th:object="${produto}">
                 <h1>Adicionar produto</h1>
 
                 <fieldset class="grid">

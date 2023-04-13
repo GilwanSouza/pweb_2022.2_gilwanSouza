@@ -38,9 +38,9 @@ public class Dependente {
     private String genero;
 
     @Column(nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
 
-    private LocalDate dataNascimento;
+    private LocalDate dtNascimento;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", nullable = false)

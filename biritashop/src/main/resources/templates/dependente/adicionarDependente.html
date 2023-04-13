@@ -55,7 +55,7 @@
 
   <div class="grid">
     <div style="padding:0 16px;">
-      <form action="@{/dependente/adicionar}" method="POST" th:object="${dependente}">
+      <form th:action="@{/dependente/adicionar}" method="POST" th:object="${dependente}">
         <h1>Adicionar dependente</h1>
         <div class="grid">
           <div>
