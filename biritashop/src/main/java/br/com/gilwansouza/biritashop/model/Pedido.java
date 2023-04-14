@@ -19,20 +19,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "produto")
-public class Produto {
+@Table(name = "pedido")
+public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nomeDoProduto;
-    private String marcaDoProduto;
-    private String volume;
-    private String precoCompra;
-    private String precoVenda;
-    private String tipoEmbalagem;
+    private String nomeCliente;
+    private String idProduto;
+    private String qtd;
+    private String preco;
+    
 
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dataCadastro;
+    private LocalDate dataCompra;
 }

@@ -62,6 +62,6 @@ public class ProdutoController {
         Produto aRemover = this.produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.produtoRepo.delete(aRemover);
-        return new ModelAndView("redirect:/produto/editarProduto");
+        return new ModelAndView("redirect:/produto/listarProduto");
     }
 }

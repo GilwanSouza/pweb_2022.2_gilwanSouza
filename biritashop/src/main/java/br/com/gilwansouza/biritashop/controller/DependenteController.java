@@ -54,7 +54,7 @@ public class DependenteController {
     @PostMapping("/editarDependente/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Dependente dependente) {
         this.dependenteRepo.save(dependente);
-        return new ModelAndView("redirect:/dependente");
+        return new ModelAndView("redirect:/dependente/listarDependente");
     }
 
     @GetMapping("/remover/{id}")
@@ -62,7 +62,7 @@ public class DependenteController {
         Dependente remover = this.dependenteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.dependenteRepo.delete(remover);
-        return new ModelAndView("redirect:/dependente");
+        return new ModelAndView("redirect:/dependente/listarDependente");
     }
 
 }

@@ -53,7 +53,7 @@ public class ClienteController {
     @PostMapping("/editarCliente/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Cliente cliente) {
         this.clienteRepo.save(cliente);
-        return new ModelAndView("redirect:/clientes");
+        return new ModelAndView("redirect:/cliente/listarCliente");
     }
 
     @GetMapping("/remover/{id}")
@@ -61,7 +61,7 @@ public class ClienteController {
         Cliente aRemover = this.clienteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
         this.clienteRepo.delete(aRemover);
-        return new ModelAndView("redirect:/cliente");
+        return new ModelAndView("redirect:/cliente/listarCliente");
     }
 
 }
