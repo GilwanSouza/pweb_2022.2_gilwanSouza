@@ -41,7 +41,7 @@ public class ClienteController {
         return "redirect:/cliente/listarCliente";
     }
 
-    @GetMapping("/editarCliente/{id}")
+    @GetMapping("/editar/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Cliente cliente = this.clienteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));

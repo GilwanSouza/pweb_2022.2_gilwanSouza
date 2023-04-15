@@ -11,14 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.gilwansouza.biritashop.model.Pedido;
+import br.com.gilwansouza.biritashop.model.Produto;
 import br.com.gilwansouza.biritashop.repository.PedidoRepository;
+import br.com.gilwansouza.biritashop.repository.ProdutoRepository;
 
 @Controller
 @RequestMapping("/pedido")
-public class PedidoController {
+public class PedidoController { 
 
     @Autowired
     PedidoRepository pedidoRepo;
+    
+    @Autowired
+    ProdutoRepository produtoRepo;
 
     @GetMapping("/listarPedido")
     public ModelAndView index() {
@@ -30,7 +35,9 @@ public class PedidoController {
 
     @GetMapping("/adicionarPedido")
     public ModelAndView formCadastro() {
+        List<Produto> listaProduto = produtoRepo.findAll();
         ModelAndView mav = new ModelAndView("/pedido/adicionarPedido");
+        mav.addObject("produtos", listaProduto);
         mav.addObject(new Pedido());
         return mav;
     }
@@ -41,7 +48,7 @@ public class PedidoController {
         return "redirect:/pedido/listarPedido";
     }
 
-    @GetMapping("/editarPedido/{id}")
+    @GetMapping("/editar/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Pedido pedido = this.pedidoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
@@ -54,7 +61,7 @@ public class PedidoController {
     @PostMapping("/editarPedido/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Pedido pedido) {
         this.pedidoRepo.save(pedido);
-        return new ModelAndView("redirect:/pedido/editarPedido");
+        return new ModelAndView("redirect:/pedido/listarPedido");
     }
 
     @GetMapping("/remover/{id}")
@@ -64,4 +71,5 @@ public class PedidoController {
         this.pedidoRepo.delete(aRemover);
         return new ModelAndView("redirect:/pedido/listarPedido");
     }
+
 }

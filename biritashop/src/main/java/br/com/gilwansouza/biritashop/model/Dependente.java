@@ -27,19 +27,16 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "dependente")
-
 public class Dependente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String nomeCompleto;
     private String genero;
 
     @Column(nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-
     private LocalDate dtNascimento;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

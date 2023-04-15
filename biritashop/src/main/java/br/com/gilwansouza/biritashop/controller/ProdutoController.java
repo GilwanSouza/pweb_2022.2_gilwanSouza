@@ -41,7 +41,7 @@ public class ProdutoController {
         return "redirect:/produto/listarProduto";
     }
 
-    @GetMapping("/editarProduto/{id}")
+    @GetMapping("/editar/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Produto produto = this.produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
@@ -54,7 +54,7 @@ public class ProdutoController {
     @PostMapping("/editarProduto/{id}")
     public ModelAndView atualizar(@PathVariable("id") long id, Produto produto) {
         this.produtoRepo.save(produto);
-        return new ModelAndView("redirect:/produto/editarProduto");
+        return new ModelAndView("redirect:/produto/listarProduto");
     }
 
     @GetMapping("/remover/{id}")

@@ -19,7 +19,7 @@
 <body>
 
     <div class="w3-bar w3-black w3-xlarge">
-        <img src="assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
+        <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
         <div class="dropdown">
             <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
             <div class="dropdown-content w3-padding-top-48 w3-transparent">
@@ -61,7 +61,7 @@
 
     <div class="grid">
         <div style="padding:0 16px;">
-            <form th:action="@{/cliente/editarCliente}" method="POST" th:object="${cliente}">
+            <form th:action="@{/cliente/editarCliente/{id}(id=${cliente.id})}" method="POST" th:object="${cliente}">
                 <h1>Editar as informações do cliente</h1>
                 <div class="grid">
                     <div>

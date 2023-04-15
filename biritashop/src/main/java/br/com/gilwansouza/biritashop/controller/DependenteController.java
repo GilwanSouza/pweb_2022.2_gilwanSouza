@@ -41,7 +41,7 @@ public class DependenteController {
         return "redirect:/produto";
     }
 
-    @GetMapping("/editarDependente/{id}")
+    @GetMapping("/editar/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
         Dependente dependente = this.dependenteRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));

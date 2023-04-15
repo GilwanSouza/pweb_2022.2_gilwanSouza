@@ -1,2 +1,5 @@
-﻿/*Primeira linha em branco - Spring não tava adicionado os valores*/
-INSERT INTO cliente (NOME_COMPLETO, TELEFONE, CIDADE, CEP, GENERO) VALUES ('Afonso Silvestre', '+55 (83) 99888-7456', 'Angicos-RN', '59515-000', 'Masculino');
+﻿/*Primeira linha em branco*/
+INSERT INTO cliente (NOME_COMPLETO, TELEFONE, CIDADE, CEP, GENERO)VALUES('Afonso Silvestre','+55 (83) 99888-7456','Angicos-RN','59515-000','Masculino');
+INSERT INTO PRODUTO (DATA_CADASTRO, MARCA_DO_PRODUTO, NOME_DO_PRODUTO, PRECO_COMPRA, PRECO_VENDA, TIPO_EMBALAGEM, VOLUME)VALUES (DATE '2011-11-11', 'Xiaomi', 'Redmi Note 10s', '1000', '1500', 'Plastico', '30');
+INSERT INTO pedido (DATA_COMPRA, ID_PRODUTO, NOME_CLIENTE, PAGAMENTO, PRECO, QTD)VALUES (DATE '2011-11-11', '1', 'Afonso', 'Dinheiro', '1500', '3');
+INSERT INTO dependente (DT_NASCIMENTO, GENERO, NOME_COMPLETO, CLIENTE_ID)VALUES (DATE '2011-11-11', 'Masculino', 'Cleiton Rasta', '1');

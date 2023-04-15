@@ -29,6 +29,7 @@ public class Pedido {
     private String idProduto;
     private String qtd;
     private String preco;
+    private String pagamento;
     
 
     @Column(nullable = false)

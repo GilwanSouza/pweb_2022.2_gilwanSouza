@@ -83,14 +83,14 @@
                     <tr th:each="pedido: ${pedidos}">
                         <th th:text="${pedido.id}"></th>
                         <td th:text="${pedido.nomeCliente}"></td>
-                        <td th:text="${produto.idProduto}"></td>
+                        <td th:text="${pedido.idProduto}"></td>
                         <td th:text="${pedido.qtd}"></td>
-                        <td th:text="${produto.valorVenda}"></td>
-                        <td th:text="${produto.velorVenda} * ${pedido.qtd}"></td>
-                        <td th:text="13,75%"></td>
+                        <td th:text="${pedido.preco}"></td>
+                        <td th:text="${pedido.preco} * ${pedido.qtd}"></td>
+                        <td text="13,75%"></td>
 
                         <td th:text="${pedido.pagamento}"></td>
-
+                        <td text="13,75%"></td>
                         <td> <a th:href="@{editar/{id}(id=${pedido.id})}">Editar</a></td>
                         <td> <a th:href="@{remover/{id}(id=${pedido.id})}">Remover</a></td>
                     </tr>

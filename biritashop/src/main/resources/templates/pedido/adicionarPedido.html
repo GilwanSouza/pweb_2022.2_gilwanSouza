@@ -60,20 +60,49 @@
     </div>
 
     <div style="padding:0 160px;">
-        <h2>Adicionar Pedido</h2>
-        <form id="pedidoForm" th:action="@{/pedido/adicionarPedido}" method="post" th:object="${pedido}">
-            <label for="clienteNome">Nome do cliente:</label>
-            <input type="text" id="clienteNome" name="clienteNome" field="*{nomeCliente}" required>
+        <h1>Lista dos produtos</h1>
+        <div class="grid">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Preço</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="produto: ${produtos}">
+                        <th th:text="${produto.id}"></th>
+                        <td th:text="${produto.nomeDoProduto}"></td>
+                        <td th:text="${produto.marcaDoProduto}"></td>
+                        <td th:text="${produto.precoVenda} + 'R$'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="padding:0 130px;">
+        <h2>Adicione seu pedido</h2>
+        <form th:action="@{/pedido/adicionarPedido}" method="POST" th:object="${pedido}">
+            <label for="nomeCliente">Nome do cliente:</label>
+            <input type="text" id="nomeCliente" name="nomeCliente" field="*{nomeCliente}" required>
             <br>
             <div class="grid">
                 <label for="produtoNome">ID do produto:</label>
                 <input type="text" id="idProduto" name="idProduto" field="*{idProduto}" required>
                 <br>
-                <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" min="1" field="*{qtd}" required>
+                <label for="qtd">Quantidade:</label>
+                <input type="number" id="qtd" name="qtd" min="1" field="*{qtd}" required>
+                <br>
+                <label for="qtd">Preço da unidade:</label>
+                <input type="number" id="preco" name="preco" min="1" field="*{preco}" required>
                 <br>
             </div>
             <div class="row">
+                <br>
                 <legend class="col-form-label pt-0">Informe o método de pagamento * </legend>
                 <div class="col-sm-10">
                     <div class="form-check">
@@ -106,44 +135,12 @@
 
             <button class="btn btn-primary contrast" type="submit">Adicionar</button>
             <br>
-            <button class="btn btn-secondary secondary" type="reset">Limpar Campos</button>
+            <button class="btn btn-secondary secondary" type="reset">Limpar campos</button>
 
             <p>* Todos os campos são obrigatórios</p>
         </form>
-
-        <div style="padding:0 16px;">
-            <h1>Lista dos produtos</h1>
-            <div class="grid">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Marca</th>
-                            <th scope="col">Volume</th>
-                            <th scope="col">Tipo Embalagem</th>
-                            <th scope="col">Preço de Compra</th>
-                            <th scope="col">Preço de Venda</th>
-                            <th scope="col">Data Cadastro</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr th:each="produto: ${produtos}" method="get" th:object="${produto}">
-                            <td th:text="${produto.id}"></td>
-                            <td th:text="${produto.nomeDoProduto}"></td>
-                            <td th:text="${produto.marcaDoProduto}"></td>
-                            <td th:text="${produto.volume} + 'mL'"></td>
-                            <td th:text="${produto.tipoEmbalagem}"></td>
-                            <td th:text="${produto.precoCompra} + 'R$'"></td>
-                            <td th:text="${produto.precoVenda} + 'R$'"></td>
-                            <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
+
 </body>
 
 </html>
