@@ -86,7 +86,7 @@
 
     <div style="padding:0 130px;">
         <h2>Adicione seu pedido</h2>
-        <form th:action="@{/pedido/adicionarPedido}" method="POST" th:object="${pedido}">
+        <form th:action="@{/pedido/adicionarPedido}" method="post" th:object="${pedido}">
             <label for="nomeCliente">Nome do cliente:</label>
             <input type="text" id="nomeCliente" name="nomeCliente" field="*{nomeCliente}" required>
             <br>

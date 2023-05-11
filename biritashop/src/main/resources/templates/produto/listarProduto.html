@@ -66,6 +66,7 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">Foto do produto</th>
           <th scope="col">Nome</th>
           <th scope="col">Marca</th>
           <th scope="col">Volume</th>
@@ -81,6 +82,7 @@
       <tbody>
         <tr th:each="produto: ${produtos}">
           <th th:text="${produto.id}"></th>
+          <td th:text="${produto.imagemProduto}"></td>
           <td th:text="${produto.nomeDoProduto}"></td>
           <td th:text="${produto.marcaDoProduto}"></td>
           <td th:text="${produto.volume} + 'mL'"></td>

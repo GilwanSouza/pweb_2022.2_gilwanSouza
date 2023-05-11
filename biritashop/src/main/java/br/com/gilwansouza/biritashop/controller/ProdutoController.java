@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.gilwansouza.biritashop.model.Produto;
@@ -36,9 +39,15 @@ public class ProdutoController {
     }
 
     @PostMapping("/adicionarProduto")
-    public String adicionar(Produto p) {
-        this.produtoRepo.save(p);
-        return "redirect:/produto/listarProduto";
+    public String cadastrarProduto(@ModelAttribute Produto produto,
+            @RequestParam("imagem") MultipartFile imagem) {
+        try {
+            produto.setImagemProduto(imagem.getBytes());
+            produtoRepo.save(produto);
+            return "redirect:/produto/sucesso";
+        } catch (Exception e) {
+            return "redirect:/produto/listarProduto";
+        }
     }
 
     @GetMapping("/editar/{id}")
