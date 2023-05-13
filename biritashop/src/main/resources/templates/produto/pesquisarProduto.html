@@ -13,13 +13,14 @@
   <link th:href="@{/assets/w3.css}" rel="stylesheet" />
   <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
 
   <div class="w3-bar w3-black w3-xlarge">
-    <img src="assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
+    <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
     <div class="dropdown">
       <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
       <div class="dropdown-content w3-padding-top-48 w3-transparent">
@@ -53,18 +54,21 @@
       </div>
     </div>
 
-    <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile center "> BiritaShop </a>
-    <a href="/public/contato" class="w3-bar-item w3-button w3-mobile right"> Contato </a>
-    <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile right"> Sobre </a>
+    <div style="padding:0 10px;" class="search-container">
+      <form th:action="@{/produto/pesquisarProduto}" method="post" th:object="${produto}"
+      enctype="multipart/form-data">
+        <label for="search">Search</label>
+        <input type="search" id="search" name="pesquisar" placeholder="Pesquisar" />
+      </form>
+    </div>
+
+    <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
+    <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
+    <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
 
   </div>
 
-    <div style="padding:0 16px;">
 
-        <h1> <a href=" mailto:gilwan.santos@alunos.ufersa.edu.br"> Me envie um e-mail! </a> </h1>
-
-    </div>
 
 </body>
-
 </html>

@@ -81,3 +81,11 @@
     background-size: cover;
     height: 100vh;
   }
+  .botao-whatsapp {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}

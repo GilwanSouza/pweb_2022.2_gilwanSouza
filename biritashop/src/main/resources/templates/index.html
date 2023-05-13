@@ -3,70 +3,96 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta codigoSecreto="475481518">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta codigoSecreto="475481518">
 
-  <title> Birita Shop </title>
+    <title> Birita Shop </title>
 
-  <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
-  <link th:href="@{/assets/w3.css}" rel="stylesheet" />
-  <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
+    <link th:href="@{/assets/w3.css}" rel="stylesheet" />
+    <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
 
-  <div class="w3-bar w3-black w3-xlarge">
-    <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
-    <div class="dropdown">
-      <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
-      <div class="dropdown-content w3-padding-top-48 w3-transparent">
-        <div class="w3-row">
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Cliente</h3>
-            <a href="/cliente/adicionaCliente" class="w3-col">Adicionar</a>
-            <a href="/cliente/listarCliente" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Produto</h3>
-            <a href="/produto/adicionarProduto" class="w3-col">Adicionar</a>
-            <a href="/produto/listarProduto" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Dependente</h3>
-            <a href="/dependente/adicionarDependente" class="w3-col">Adicionar</a>
-            <a href="/dependente/listarDependente" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Pedido</h3>
-            <a href="/pedido/adicionarPedido" class="w3-col">Adicionar</a>
-            <a href="/pedido/listarPedido" class="w3-col">Listar</a>
-          </div>
-
-        </div>
-      </div>
+    <div class="hero" data-theme="dark">
+        <nav class="container-fluid">
+            <ul>
+                <li>
+                    <a href="./" class="contrast" onclick="event.preventDefault()"><strong>BiritaShop</strong></a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <details role="list" dir="rtl">
+                        <summary aria-haspopup="listbox" role="link" class="contrast">Cliente</summary>
+                        <ul role="listbox">
+                            <a href="/cliente/adicionaCliente" class="w3-col">Adicionar</a>
+                            <a href="/cliente/listarCliente" class="w3-col">Listar</a>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details role="list" dir="rtl">
+                        <summary aria-haspopup="listbox" role="link" class="contrast">Produto</summary>
+                        <ul role="listbox">
+                            <a href="/produto/adicionarProduto" class="w3-col">Adicionar</a>
+                            <a href="/produto/listarProduto" class="w3-col">Listar</a>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details role="list" dir="rtl">
+                        <summary aria-haspopup="listbox" role="link" class="contrast">Dependente</summary>
+                        <ul role="listbox">
+                            <a href="/dependente/adicionarDependente" class="w3-col">Adicionar</a>
+                            <a href="/dependente/listarDependente" class="w3-col">Listar</a>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details role="list" dir="rtl">
+                        <summary aria-haspopup="listbox" role="link" class="contrast">Pedido</summary>
+                        <ul role="listbox">
+                            <a href="/pedido/adicionarPedido" class="w3-col">Adicionar</a>
+                            <a href="/pedido/listarPedido" class="w3-col">Listar</a>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <ul>
+                        <form style="padding:0 10px;" class="navbar-search" action="/produto/pesquisarProduto" method="post">
+                            <input type="search" id="search" name="pesquisar" placeholder="Pesquisar"
+                                class="navbar-search-input">
+                        </form>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="navbar-menu">
+                        <li class="navbar-item">
+                            <a href="/public/contato" class="navbar-link">Contato</a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="/public/sobre" class="navbar-link">Sobre</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 
-    <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
-    <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
-    <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
+    <center>
 
-  </div>
+        <h5>
 
-  <center>
+        </h5>
+        <img src="assets/beer.jpeg" alt="beer" title="Beer">
 
-    <h5>
-
-    </h5>
-    <img src="assets/beer.jpeg" alt="beer" title="Beer">
-
-  </center>
+    </center>
 
 
 
