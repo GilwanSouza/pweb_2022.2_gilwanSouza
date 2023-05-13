@@ -26,7 +26,7 @@
                     <a href="./" class="contrast" onclick="event.preventDefault()"><strong>BiritaShop</strong></a>
                 </li>
             </ul>
-            <ul>
+            <ul class="navbar-right">
                 <li>
                     <details role="list" dir="rtl">
                         <summary aria-haspopup="listbox" role="link" class="contrast">Cliente</summary>
@@ -64,15 +64,13 @@
                     </details>
                 </li>
                 <li>
-                    <ul>
-                        <form style="padding:0 10px;" class="navbar-search" action="/produto/pesquisarProduto" method="post">
-                            <input type="search" id="search" name="pesquisar" placeholder="Pesquisar"
-                                class="navbar-search-input">
-                        </form>
-                    </ul>
+                    <form style="padding:0 10px;" class="navbar-search" action="/produto/pesquisarProduto" method="post">
+                        <input type="search" id="search" name="pesquisar" placeholder="Pesquisar"
+                            class="navbar-search-input">
+                    </form>
                 </li>
                 <li>
-                    <ul class="navbar-menu">
+                    <ul class="navbar-left">
                         <li class="navbar-item">
                             <a href="/public/contato" class="navbar-link">Contato</a>
                         </li>
@@ -83,7 +81,7 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </div>    
 
     <center>
 

@@ -27,7 +27,7 @@ public class Cliente {
     private String genero;
     private String telefone;
     private String cidade;
-    private String CEP;
+    private String cep;
 
     @OneToMany(mappedBy = "cliente")
     private List<Dependente> dependentes;

@@ -68,34 +68,35 @@
                 <div class="grid">
                     <label for="nomeDoProduto">Nome *
                         <input type="text" name="nomeDoProduto" class="form-control" id="nomeDoProduto"
-                            placeholder="Nome do produto" required>
+                            placeholder="Nome do produto" th:field="*{nomeDoProduto}" required>
                     </label>
 
                     <label for="marcaDoProduto">Marca *
                         <input type="text" name="marcaDoProduto" class="form-control" id="marcaDoProduto"
-                            placeholder="Marca do produto" required>
+                            placeholder="Marca do produto" th:field="*{marcaDoProduto}" required>
                     </label>
                 </div>
 
                 <div class="grid">
                     <label for="volume">Volume *
-                        <input type="text" name="volume" class="form-control" id="volume" placeholder="Volume" required>
+                        <input type="text" name="volume" class="form-control" id="volume" placeholder="Volume"
+                            th:field="*{volume}" required>
                     </label>
                     <label for="precoCompra">Preço de compra *
                         <input type="text" name="precoCompra" class="form-control" id="precoCompra"
-                            placeholder="Preço de Compra" required>
+                            placeholder="Preço de Compra" th:field="*{precoCompra}" required>
                     </label>
                 </div>
 
                 <div class="grid">
                     <label for="precoVenda">Preço de venda *
                         <input type="text" name="precoVenda" class="form-control" id="precoVenda"
-                            placeholder="Preço de venda" required>
+                            placeholder="Preço de venda" th:field="*{precoVenda}" required>
                     </label>
 
                     <label for="dataCadastro">Data de cadastro *
                         <input type="date" name="dataCadastro" class="form-control" id="dataCadastro"
-                            placeholder="Data de cadastro" required>
+                            placeholder="Data de cadastro" th:field="*{dataCadastro}" required>
                     </label>
                 </div>
 
@@ -111,21 +112,22 @@
                 <div class="grid">
                     <legend class="w3-text-white">Tipo de Embalagem *</legend>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="plastico" value="Plástico"
-                            required>
+                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="plastico" value="Plástico" th:field="*{tipoEmbalagem}" required
+                            th:checked="${tipoEmbalagem == 'Plástico'}">
                         <label class="form-check-label" for="plastico">Plástico</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="metal" value="Metal"
-                            required>
+                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="metal" value="Metal" th:field="*{tipoEmbalagem}" required
+                            th:checked="${tipoEmbalagem == 'Metal'}">
                         <label class="form-check-label" for="metal">Metal</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="vidro" value="Vidro"
-                            required>
+                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="vidro" value="Vidro" th:field="*{tipoEmbalagem}" required
+                            th:checked="${tipoEmbalagem == 'Vidro'}">
                         <label class="form-check-label" for="vidro">Vidro</label>
                     </div>
                 </div>
+                
 
         </div>
 

@@ -82,7 +82,7 @@
                 th:href="'https://api.whatsapp.com/send?phone=' + ${cliente.telefone} + '&text=Olá'"
                 target="_blank" th:text="${cliente.telefone}">Telefone</a></a></td>
             <td th:text="${cliente.cidade}"></td>
-            <td th:text="${cliente.CEP}"></td>
+            <td th:text="${cliente.cep}"></td>
             <td th:text="${cliente.genero}"></td>
             <td>
               <a th:href="@{editar/{id}(id=${cliente.id})}">Editar</a>
