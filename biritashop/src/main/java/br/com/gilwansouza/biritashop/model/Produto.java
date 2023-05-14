@@ -1,6 +1,7 @@
 package br.com.gilwansouza.biritashop.model;
 
 import java.time.LocalDate;
+import java.util.Base64;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,4 +40,8 @@ public class Produto {
 
     @Lob
     private byte[] imagemProduto;
+
+    public String getImagem(){
+        return Base64.getEncoder().encodeToString(imagemProduto);
+    }
 }

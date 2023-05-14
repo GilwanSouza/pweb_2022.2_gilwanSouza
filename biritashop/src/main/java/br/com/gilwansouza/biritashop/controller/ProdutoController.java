@@ -1,5 +1,6 @@
 package br.com.gilwansouza.biritashop.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,28 +42,39 @@ public class ProdutoController {
     @PostMapping("/adicionarProduto")
     public String cadastrarProduto(@ModelAttribute Produto produto,
             @RequestParam("imagem") MultipartFile imagem) {
-        try {
-            produto.setImagemProduto(imagem.getBytes());
-            produtoRepo.save(produto);
-            return "redirect:/produto/sucesso";
-        } catch (Exception e) {
-            return "redirect:/produto/listarProduto";
+        if (!imagem.isEmpty()) {
+            byte[] bytes = new byte[(int) imagem.getSize()];
+            try {
+                bytes = imagem.getBytes();
+                produto.setImagemProduto(bytes);
+                this.produtoRepo.save(produto);
+            } catch (Exception exception) {
+            }
         }
+        return "redirect:/produto/listarProduto";
     }
 
     @GetMapping("/editar/{id}")
     public ModelAndView formEditar(@PathVariable("id") long id) {
-        Produto produto = this.produtoRepo.findById(id)
+        Produto produto = produtoRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 
         ModelAndView modelAndView = new ModelAndView("/produto/editarProduto");
-        modelAndView.addObject(produto);
+        modelAndView.addObject("produto", produto);
         return modelAndView;
     }
 
     @PostMapping("/editarProduto/{id}")
-    public ModelAndView atualizar(@PathVariable("id") long id, Produto produto) {
-        this.produtoRepo.save(produto);
+    public ModelAndView atualizar(@PathVariable("id") long id, @ModelAttribute("produto") Produto produto,
+            @RequestParam("imagem") MultipartFile imagem) {
+        if (!imagem.isEmpty()) {
+            try {
+                byte[] bytes = imagem.getBytes();
+                produto.setImagemProduto(bytes);
+            } catch (IOException e) {
+            }
+        }
+        produtoRepo.save(produto);
         return new ModelAndView("redirect:/produto/listarProduto");
     }
 

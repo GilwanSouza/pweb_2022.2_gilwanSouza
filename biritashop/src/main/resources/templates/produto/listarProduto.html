@@ -62,39 +62,44 @@
   <div style="padding:0 16px;">
     <h1>Lista dos produtos cadastrados</h1>
     <div class="grid">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Foto do produto</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Marca</th>
-          <th scope="col">Volume</th>
-          <th scope="col">Tipo Embalagem</th>
-          <th scope="col">Preço de Compra</th>
-          <th scope="col">Preço de Venda</th>
-          <th scope="col">Data Cadastro</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Remover</th>
-        </tr>
-      </thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Foto do produto</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Tipo Embalagem</th>
+            <th scope="col">Preço de Compra</th>
+            <th scope="col">Preço de Venda</th>
+            <th scope="col">Data Cadastro</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Remover</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr th:each="produto: ${produtos}">
-          <th th:text="${produto.id}"></th>
-          <td th:text="${produto.imagemProduto}"></td>
-          <td th:text="${produto.nomeDoProduto}"></td>
-          <td th:text="${produto.marcaDoProduto}"></td>
-          <td th:text="${produto.volume} + 'mL'"></td>
-          <td th:text="${produto.tipoEmbalagem}"></td>
-          <td th:text="${produto.precoCompra} + 'R$'"></td>
-          <td th:text="${produto.precoVenda} + 'R$'"></td>
-          <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
-          <td> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a></td>
-          <td> <a th:href="@{remover/{id}(id=${produto.id})}">Remover</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <tbody>
+          <tr th:each="produto: ${produtos}">
+            <th th:text="${produto.id}"></th>
+            <td>
+              <img th:id="'Produto' + ${produto.id}"
+                th:src="@{${produto.getImagemProduto} ? ('data:assets/jpeg;base64,' + ${produto.getImagem()}) : @{/assets/produto-sem-imagem.png}}"
+                th:alt="'Foto de' + ${produto.nomeDoProduto}" width="60" height="60">
+            </td>
+            <td th:text="${produto.nomeDoProduto}"></td>
+            <td th:text="${produto.marcaDoProduto}"></td>
+            <td th:text="${produto.volume} + 'mL'"></td>
+            <td th:text="${produto.tipoEmbalagem}"></td>
+            <td th:text="${produto.precoCompra} + 'R$'"></td>
+            <td th:text="${produto.precoVenda} + 'R$'"></td>
+            <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
+            <td> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a></td>
+            <td> <a th:href="@{remover/{id}(id=${produto.id})}">Remover</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </body>
+
 </html>

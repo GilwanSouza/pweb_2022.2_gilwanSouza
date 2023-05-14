@@ -103,7 +103,7 @@
                 <div class="grid">
                     <label for="imagemProduto" class="text-sm">Insira a imagem do produto *</label>
                     <div class="flex items-center">
-                        <input type="file" name="imagemProduto" class="input" id="imagemProduto" required>
+                        <input type="file" name="imagemProduto" class="input" id="imagemProduto">
                         <img id="previewImage" src="" alt="" class="ml-4" style="max-width: 200px; max-height: 200px;"
                             onclick="showImageInput()">
                     </div>
@@ -112,8 +112,8 @@
                 <div class="grid">
                     <legend class="w3-text-white">Tipo de Embalagem *</legend>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="plastico" value="Plástico" th:field="*{tipoEmbalagem}" required
-                            th:checked="${tipoEmbalagem == 'Plástico'}">
+                        <input class="form-check-input" type="radio" name="tipoEmbalagem" id="plastico" value="Plastico" th:field="*{tipoEmbalagem}" required
+                            th:checked="${tipoEmbalagem == 'Plastico'}">
                         <label class="form-check-label" for="plastico">Plástico</label>
                     </div>
                     <div class="form-check">
