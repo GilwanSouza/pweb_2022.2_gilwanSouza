@@ -1,289 +1,341 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br" data-theme="dark">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta codigoSecreto="475481518">
-
-    <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
-    <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
-    <link th:href="@{/assets/css/reset.css}" rel="stylesheet"> <!-- CSS reset -->
-    <link th:href="@{/assets/css/navbarra.css}" rel="stylesheet"> <!-- Resource style -->
-    <script src="/assets/js/modernizr.js"></script> <!-- Modernizr -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>Birita Shop</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="/assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <img src="/assets/favicon.ico" height="50" width="50" class="navbar-item">
-        <div class="cd-dropdown-wrapper dark">
-            <a class="cd-dropdown-trigger">Birita Shop</a>
-            <nav class="cd-dropdown">
-                <h2>Title</h2>
-                <a href="#0" class="cd-close">Close</a>
-                <ul class="cd-dropdown-content">
-                    <li>
-                        <form class="cd-search">
-                            <input type="search" placeholder="Search...">
-                        </form>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">Birita Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/cliente/adicionaCliente">Adicionar</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/cliente/listarCliente">Listar</a></li>
+                        </ul>
                     </li>
-                    <li class="has-children">
-                        <a href="http://codyhouse.co/?p=748">Clothing</a>
-
-                        <ul class="cd-secondary-dropdown is-hidden">
-                            <li class="go-back"><a href="#0">Menu</a></li>
-                            <li class="see-all"><a href="http://codyhouse.co/?p=748">All Clothing</a></li>
-                            <li class="has-children">
-                                <a href="http://codyhouse.co/?p=748">Accessories</a>
-
-                                <ul class="is-hidden">
-                                    <li class="go-back"><a href="#0">Clothing</a></li>
-                                    <li class="see-all"><a href="http://codyhouse.co/?p=748">All Accessories</a></li>
-                                    <li class="has-children">
-                                        <a href="#0">Beanies</a>
-
-                                        <ul class="is-hidden">
-                                            <li class="go-back"><a href="#0">Accessories</a></li>
-                                            <li class="see-all"><a href="http://codyhouse.co/?p=748">All Benies</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Caps &amp; Hats</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Gifts</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Scarves &amp; Snoods</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="#0">Caps &amp; Hats</a>
-
-                                        <ul class="is-hidden">
-                                            <li class="go-back"><a href="#0">Accessories</a></li>
-                                            <li class="see-all"><a href="http://codyhouse.co/?p=748">All Caps &amp;
-                                                    Hats</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Beanies</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Caps</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="http://codyhouse.co/?p=748">Glasses</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Gloves</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Jewellery</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Scarves</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-children">
-                                <a href="http://codyhouse.co/?p=748">Bottoms</a>
-
-                                <ul class="is-hidden">
-                                    <li class="go-back"><a href="#0">Clothing</a></li>
-                                    <li class="see-all"><a href="http://codyhouse.co/?p=748">All Bottoms</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Casual Trousers</a></li>
-                                    <li class="has-children">
-                                        <a href="#0">Jeans</a>
-
-                                        <ul class="is-hidden">
-                                            <li class="go-back"><a href="#0">Bottoms</a></li>
-                                            <li class="see-all"><a href="http://codyhouse.co/?p=748">All Jeans</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Ripped</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Skinny</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Slim</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Straight</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#0">Leggings</a></li>
-                                    <li><a href="#0">Shorts</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-children">
-                                <a href="http://codyhouse.co/?p=748">Jackets</a>
-
-                                <ul class="is-hidden">
-                                    <li class="go-back"><a href="#0">Clothing</a></li>
-                                    <li class="see-all"><a href="http://codyhouse.co/?p=748">All Jackets</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Blazers</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Bomber jackets</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Denim Jackets</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Duffle Coats</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Leather Jackets</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Parkas</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-children">
-                                <a href="http://codyhouse.co/?p=748">Tops</a>
-
-                                <ul class="is-hidden">
-                                    <li class="go-back"><a href="#0">Clothing</a></li>
-                                    <li class="see-all"><a href="http://codyhouse.co/?p=748">All Tops</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Cardigans</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Coats</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Polo Shirts</a></li>
-                                    <li><a href="http://codyhouse.co/?p=748">Shirts</a></li>
-                                    <li class="has-children">
-                                        <a href="#0">T-Shirts</a>
-
-                                        <ul class="is-hidden">
-                                            <li class="go-back"><a href="#0">Tops</a></li>
-                                            <li class="see-all"><a href="http://codyhouse.co/?p=748">All T-shirts</a>
-                                            </li>
-                                            <li><a href="http://codyhouse.co/?p=748">Plain</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Print</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Striped</a></li>
-                                            <li><a href="http://codyhouse.co/?p=748">Long sleeved</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="http://codyhouse.co/?p=748">Vests</a></li>
-                                </ul>
-                            </li>
-                        </ul> <!-- .cd-secondary-dropdown -->
-                    </li> <!-- .has-children -->
-
-                    <li class="has-children">
-                        <a href="http://codyhouse.co/?p=748">Gallery</a>
-
-                        <ul class="cd-dropdown-gallery is-hidden">
-                            <li class="go-back"><a href="#0">Menu</a></li>
-                            <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Gallery</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Produto</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/produto/adicionarProduto">Adicionar</a></li>
                             <li>
-                                <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-                                    <img src="img/img.png" alt="Product Image">
-                                    <h3>Product #1</h3>
-                                </a>
+                                <hr class="dropdown-divider" />
                             </li>
-
+                            <li><a class="dropdown-item" href="/produto/listarProduto">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Pedido</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/pedido/adicionarPedido">Adicionar</a></li>
                             <li>
-                                <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-                                    <img src="img/img.png" alt="Product Image">
-                                    <h3>Product #2</h3>
-                                </a>
+                                <hr class="dropdown-divider" />
                             </li>
-
+                            <li><a class="dropdown-item" href="/pedido/listarPedido">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Dependente</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/dependente/adicionarDependente">Adicionar</a></li>
                             <li>
-                                <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-                                    <img src="img/img.png" alt="Product Image">
-                                    <h3>Product #3</h3>
-                                </a>
+                                <hr class="dropdown-divider" />
                             </li>
-
-                            <li>
-                                <a class="cd-dropdown-item" href="http://codyhouse.co/?p=748">
-                                    <img src="img/img.png" alt="Product Image">
-                                    <h3>Product #4</h3>
-                                </a>
-                            </li>
-                        </ul> <!-- .cd-dropdown-gallery -->
-                    </li> <!-- .has-children -->
-
-                    <li class="has-children">
-                        <a href="http://codyhouse.co/?p=748">Services</a>
-                        <ul class="cd-dropdown-icons is-hidden">
-                            <li class="go-back"><a href="#0">Menu</a></li>
-                            <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>
-                            <li>
-                                <a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #1</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #2</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #3</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #4</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #5</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-6" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #6</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-7" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #7</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-8" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #8</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-9" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #9</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-10" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #10</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-11" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #11</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="cd-dropdown-item item-12" href="http://codyhouse.co/?p=748">
-                                    <h3>Service #12</h3>
-                                    <p>This is the item description</p>
-                                </a>
-                            </li>
-
-                        </ul> <!-- .cd-dropdown-icons -->
-                    </li> <!-- .has-children -->
-
-                    <li class="cd-divider">Divider</li>
-
-                    <li><a href="http://codyhouse.co/?p=748">Page 1</a></li>
-                    <li><a href="http://codyhouse.co/?p=748">Page 2</a></li>
-                    <li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
-                </ul> <!-- .cd-dropdown-content -->
-            </nav> <!-- .cd-dropdown -->
-        </div> <!-- .cd-dropdown-wrapper -->
+                            <li><a class="dropdown-item" href="/dependente/listarDependente">Listar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search" href="/produto/pesquisarProduto{nomeDoProduto}">
+                    <button class="btn btn-outline-success" type="submit" >Buscar</button>
+                </form>
+                <ul> </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Carinho
+                        <span class="badge bg-light text-black ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">BiritaShop</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Descubra o sabor que eleva seu brinde!</p>
+            </div>
+        </div>
     </header>
-
-    <main class="cd-main-content">
-        <!-- your content here -->
-    </main>
-
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/jquery.menu-aim.js"></script> <!-- menu aim -->
-    <script src="js/main.js"></script> <!-- Resource jQuery -->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="/assets/img/vinho.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Vinho Jolimont</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                
+                                R$80.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                       
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção
+                        </div>
+                        
+                        <img class="card-img-top" src="/assets/img/tequiaJoseCuervoata.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Tequila</h5>
+                                
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                
+                                <span class="text-muted text-decoration-line-through">R$120.00</span>
+                                R$100.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção
+                        </div>
+                        
+                        <img class="card-img-top" src="/assets/img/whisky.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Jack Daniels</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                               
+                                <span class="text-muted text-decoration-line-through">R$150.00</span>
+                                R$125.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="/assets/img/vodka.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Vodka Ciroc</h5>
+                                
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                
+                                R$60.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção
+                        </div>
+                        
+                        <img class="card-img-top" src="/assets/img/skol.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Skol</h5>
+                                
+                                <span class="text-muted text-decoration-line-through">R$32.00</span>
+                                R$25.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="/assets/img/cachaca.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Cachaça 51</h5>
+                                
+                                R$20.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção
+                        </div>
+                        
+                        <img class="card-img-top" src="/assets/img/budweiser.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Budweiser</h5>
+                                
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                
+                                <span class="text-muted text-decoration-line-through">R$40.00</span>
+                                R$30.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="/assets/img/corote.png" alt="..." />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h5 class="fw-bolder">Corote</h5>
+                                
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                
+                                R$4.00
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Birita Shop 2023
+            <li class="m-0 text-center text-white"><a class="nav-link active" aria-current="page" href="/public/contato">Contato</a></li>
+            <li class="m-0 text-center text-white"><a class="nav-link" href="/public/sobre">Sobre</a></li>
+            </p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

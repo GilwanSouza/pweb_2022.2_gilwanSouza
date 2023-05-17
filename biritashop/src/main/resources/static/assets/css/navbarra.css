@@ -16,11 +16,11 @@ body {
   font-size: 1.6rem;
   font-family: sans-serif;
   color: #111433;
-  background-color: #ffffff;
+  background-color: #131313;
 }
 
 a {
-  color: #3f8654;
+  color: #61615f;
   text-decoration: none;
 }
 
@@ -60,7 +60,7 @@ Main Components
 -------------------------------- */
 header {
   height: 100px;
-  background: #ffffff;
+  background: #1b1b1b;
 }
 
 .cd-dropdown-wrapper {
@@ -77,12 +77,12 @@ header {
   position: relative;
   padding: 0 36px 0 20px;
   line-height: 40px;
-  background-color: #111433;
-  color: #ffffff;
+  background-color: #fbff11;
+  color: #000000;
   border-radius: 3px;
 }
 .no-touch .cd-dropdown-trigger:hover {
-  background-color: #171b46;
+  background-color: #fbff11;
 }
 .cd-dropdown-trigger::before, .cd-dropdown-trigger::after {
   /* this is the arrow inside the dropdown trigger*/
@@ -92,7 +92,7 @@ header {
   margin-top: -1px;
   height: 2px;
   width: 9px;
-  background: #ffffff;
+  background: #020202;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: width 0.3s, -webkit-transform 0.3s;
@@ -120,7 +120,7 @@ header {
     font-size: 1.5rem;
   }
   .cd-dropdown-trigger.dropdown-is-active {
-    background-color: #3f8654;
+    background-color: #0081eb;
   }
   .no-touch .cd-dropdown-trigger.dropdown-is-active:hover {
     background-color: #47975f;
@@ -184,7 +184,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111433;
+  background-color: #61615f;
   color: #ffffff;
   visibility: hidden;
   /* Force Hardware Acceleration */

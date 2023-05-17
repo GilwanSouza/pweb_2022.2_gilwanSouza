@@ -2,135 +2,178 @@
 <html lang="pt-br" data-theme="dark">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta codigoSecreto="475481518">
+    <title>Birita Shop</title>
 
-    <title> Birita Shop </title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
-    <link th:href="@{/assets/w3.css}" rel="stylesheet" />
-    <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    <link href="/assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-
-    <div class="w3-bar w3-black w3-xlarge">
-        <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
-        <div class="dropdown">
-            <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
-            <div class="dropdown-content w3-padding-top-48 w3-transparent">
-                <div class="w3-row">
-
-                    <div class="w3-col s3 w3-purple">
-                        <h3 class="w3-black">Cliente</h3>
-                        <a href="/cliente/adicionaCliente" class="w3-col">Adicionar</a>
-                        <a href="/cliente/listarCliente" class="w3-col">Listar</a>
-                    </div>
-
-                    <div class="w3-col s3 w3-purple">
-                        <h3 class="w3-black">Produto</h3>
-                        <a href="/produto/adicionarProduto" class="w3-col">Adicionar</a>
-                        <a href="/produto/listarProduto" class="w3-col">Listar</a>
-                    </div>
-
-                    <div class="w3-col s3 w3-purple">
-                        <h3 class="w3-black">Dependente</h3>
-                        <a href="/dependente/adicionarDependente" class="w3-col">Adicionar</a>
-                        <a href="/dependente/listarDependente" class="w3-col">Listar</a>
-                    </div>
-
-                    <div class="w3-col s3 w3-purple">
-                        <h3 class="w3-black">Pedido</h3>
-                        <a href="/pedido/adicionarPedido" class="w3-col">Adicionar</a>
-                        <a href="/pedido/listarPedido" class="w3-col">Listar</a>
-                    </div>
-
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">Birita Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/cliente/adicionaCliente">Adicionar</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/cliente/listarCliente">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Produto</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/produto/adicionarProduto">Adicionar</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/produto/listarProduto">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Pedido</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/pedido/adicionarPedido">Adicionar</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/pedido/listarPedido">Listar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Dependente</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/dependente/adicionarDependente">Adicionar</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="/dependente/listarDependente">Listar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <ul> </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Carinho
+                        <span class="badge bg-light text-black ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
             </div>
         </div>
-
-        <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
-        <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
-        <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
-
-    </div>
-
-    <div class="grid">
-        <div style="padding:0 16px;">
-            <form th:action="@{/cliente/editarCliente/{id}(id=${cliente.id})}" method="POST" th:object="${cliente}">
-                <h1>Editar as informações do cliente</h1>
-                <div class="grid">
-                    <div>
-                        <label for="nomeCompleto">Nome Completo * </label>
+    </nav>
+    
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">BiritaShop</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Descubra o sabor que eleva seu brinde!</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Editar as informações do cliente</h1>
+        <form th:action="@{/cliente/editarCliente/{id}(id=${cliente.id})}" method="POST" th:object="${cliente}">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nomeCompleto">Nome Completo*</label>
                         <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
                             placeholder="Nome Completo" th:field="*{nomeCompleto}" required>
                     </div>
-
-                    <div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="telefone">Telefone*</label>
                         <input type="tel" class="form-control" id="telefone" name="telefone"
                             placeholder="(__) ____-____" th:field="*{telefone}" required>
                     </div>
-
                 </div>
-
-                <div class="grid">
-                    <div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="cidade">Cidade*</label>
                         <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade"
                             th:field="*{cidade}" required>
                     </div>
-
-                    <div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label for="cep">CEP*</label>
                         <input type="text" class="form-control" id="cep" name="cep" placeholder="_____-___"
                             th:field="*{cep}" required>
                     </div>
                 </div>
-
-                <div class="row">
-                    <legend class="col-form-label pt-0">Informe o gênero*</legend>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino"
-                                th:field="*{genero}">
-                            <label class="form-check-label" for="masculino">
-                                Masculino
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="genero" id="feminino" value="Feminino"
-                                th:field="*{genero}">
-                            <label class="form-check-label" for="feminino">
-                                Feminino
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="genero" id="naoInformado"
-                                value="Não Informado" th:field="*{genero}">
-                            <label class="form-check-label" for="naoInformado">
-                                Não informado
-                            </label>
-                        </div>
-                    </div>
+            </div>
+            <div class="form-group">
+                <label for="genero">Informe o gênero*</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino"
+                        th:field="*{genero}">
+                    <label class="form-check-label" for="masculino">
+                        Masculino
+                    </label>
                 </div>
-
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="feminino" value="Feminino"
+                        th:field="*{genero}">
+                    <label class="form-check-label" for="feminino">
+                        Feminino
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="naoInformado" value="Não Informado"
+                        th:field="*{genero}">
+                    <label class="form-check-label" for="naoInformado">
+                        Não informado
+                    </label>
+                </div>
                 <br>
-
-                <button class="btn btn-primary" type="submit">Salvar alterações</button>
-                <br>
-                <button class="btn btn-secondary" type="reset">Limpar campos</button>
-
-                <p>*Todos os campos são obrigatórios</p>
-            </form>
-        </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Salvar alterações</button>
+            <button class="btn btn-secondary" type="reset">Limpar campos</button>
+            <p>* Todos os campos são obrigatórios</p>
+        </form>
     </div>
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Birita Shop 2023
+            <li class="m-0 text-center text-white"><a class="nav-link active" aria-current="page" href="/public/contato">Contato</a></li>
+            <li class="m-0 text-center text-white"><a class="nav-link" href="/public/sobre">Sobre</a></li>
+            </p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

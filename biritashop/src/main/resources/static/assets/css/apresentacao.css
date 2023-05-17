@@ -1,0 +1,31 @@
+/* -------------------------------- 
+
+File#: _1_stacking-cards
+Title: Stacking Cards
+Descr: Cards stack effect on vertical scrolling
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.stack-cards {
+    --stack-cards-gap: var(--space-sm);
+    --stack-cards-item-ratio: 2/1;
+  }
+  
+  .stack-cards__item {
+    position: relative;
+    position: sticky;
+    top: var(--space-md);
+    height: 0;
+    padding-bottom: calc(100% / (var(--stack-cards-item-ratio)));
+    transform-origin: center top;
+  }
+  .stack-cards__item > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  

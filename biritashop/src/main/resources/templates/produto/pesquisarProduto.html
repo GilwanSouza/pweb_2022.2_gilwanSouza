@@ -2,73 +2,155 @@
 <html lang="pt-br" data-theme="dark">
 
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta codigoSecreto="475481518">
+  <title>Birita Shop</title>
 
-  <title> Birita Shop </title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <link th:href="@{/assets/favicon.ico}" rel="icon" type="image/x-icon" />
-  <link th:href="@{/assets/w3.css}" rel="stylesheet" />
-  <link th:href="@{/assets/pico.min.css}" rel="stylesheet" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link href="/assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-
-  <div class="w3-bar w3-black w3-xlarge">
-    <img src="/assets/favicon.ico" height="50" width="50" class="w3-item w3-left">
-    <div class="dropdown">
-      <button class="dropbtn w3-purple w3-xlarge w3-bar-item">≡</button>
-      <div class="dropdown-content w3-padding-top-48 w3-transparent">
-        <div class="w3-row">
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Cliente</h3>
-            <a href="/cliente/adicionaCliente" class="w3-col">Adicionar</a>
-            <a href="/cliente/listarCliente" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Produto</h3>
-            <a href="/produto/adicionarProduto" class="w3-col">Adicionar</a>
-            <a href="/produto/listarProduto" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Dependente</h3>
-            <a href="/dependente/adicionarDependente" class="w3-col">Adicionar</a>
-            <a href="/dependente/listarDependente" class="w3-col">Listar</a>
-          </div>
-
-          <div class="w3-col s3 w3-purple">
-            <h3 class="w3-black">Pedido</h3>
-            <a href="/pedido/adicionarPedido" class="w3-col">Adicionar</a>
-            <a href="/pedido/listarPedido" class="w3-col">Listar</a>
-          </div>
-
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/">Birita Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Cliente</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/cliente/adicionaCliente">Adicionar</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="/cliente/listarCliente">Listar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Produto</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/produto/adicionarProduto">Adicionar</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="/produto/listarProduto">Listar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Pedido</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/pedido/adicionarPedido">Adicionar</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="/pedido/listarPedido">Listar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Dependente</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/dependente/adicionarDependente">Adicionar</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="/dependente/listarDependente">Listar</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <ul> </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi-cart-fill me-1"></i>
+            Carinho
+            <span class="badge bg-light text-black ms-1 rounded-pill">0</span>
+          </button>
+        </form>
       </div>
     </div>
+  </nav>
 
-    <div style="padding:0 10px;" class="search-container">
-      <form th:action="@{/produto/pesquisarProduto}" method="post" th:object="${produto}"
-      enctype="multipart/form-data">
-        <label for="search">Search</label>
-        <input type="search" id="search" name="pesquisar" placeholder="Pesquisar" />
-      </form>
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">BiritaShop</h1>
+        <p class="lead fw-normal text-white-50 mb-0">Descubra o sabor que eleva seu brinde!</p>
+      </div>
     </div>
+  </header>
 
-    <a href="/" class="w3-purple w3-bar-item w3-button w3-mobile "> BiritaShop </a>
-    <a href="/public/contato" class="w3-bar-item w3-button w3-mobile w3-right"> Contato </a>
-    <a href="/public/sobre" class="w3-bar-item w3-button w3-mobile w3-right"> Sobre </a>
+  <div class="container p-5">
+    <h1>Lista dos produtos cadastrados</h1>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Foto do produto</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Tipo Embalagem</th>
+            <th scope="col">Preço de Compra</th>
+            <th scope="col">Preço de Venda</th>
+            <th scope="col">Data Cadastro</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Remover</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr th:each="produto: ${produtos}">
+            <th th:text="${produto.id}"></th>
+            <td>
+              <img th:id="'Produto' + ${produto.id}"
+                th:src="@{${produto.getImagemProduto} ? ('data:assets/jpeg;base64,' + ${produto.getImagem()}) : @{/assets/produto-sem-imagem.png}}"
+                th:alt="'Foto de' + ${produto.nomeDoProduto}" width="60" height="60">
+            </td>
+            <td th:text="${produto.nomeDoProduto}"></td>
+            <td th:text="${produto.marcaDoProduto}"></td>
+            <td th:text="${produto.volume} + 'mL'"></td>
+            <td th:text="${produto.tipoEmbalagem}"></td>
+            <td th:text="${produto.precoCompra} + 'R$'"></td>
+            <td th:text="${produto.precoVenda} + 'R$'"></td>
+            <td th:text="${#temporals.format(produto.dataCadastro, 'dd/MM/yyyy')}"></td>
+            <td> <a th:href="@{editar/{id}(id=${produto.id})}">Editar</a></td>
+            <td> <a th:href="@{remover/{id}(id=${produto.id})}">Remover</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-
-
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Birita Shop 2023
+        <li class="m-0 text-center text-white"><a class="nav-link active" aria-current="page"
+            href="/public/contato">Contato</a></li>
+        <li class="m-0 text-center text-white"><a class="nav-link" href="/public/sobre">Sobre</a></li>
+      </p>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="js/scripts.js"></script>
 </body>
+
 </html>
